@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP JS</title>
+</head>
+<body>
+     <p id="student1"></p>
+     <p id="student2"></p>
+    <script>
+        class Student{
+            constructor(name, yob){
+                this.name = name
+                this.yob = yob
+            }
+
+            age(){
+                var year = new Date().getFullYear()
+                var student_age = year - this.yob
+                return student_age
+            }
+        }
+
+        st1 = new Student("John", 2012)
+        st2 = new Student("David", 2018)
+
+        document.getElementById("student1").innerHTML = "Student's Age : " + st1.age()
+        document.getElementById("student2").innerHTML = "Student's Age : " + st2.age()
+    </script>
+    
+</body>
+</html>
