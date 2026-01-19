@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time and Hour</title>
+</head>
+<body>
+    <button onclick="myFunction()">Display Time</button>
+    <p id="hour"></p>
+    <p id="greet"></p>
+
+    <script>
+        function myFunction(){
+         var greeting = ''
+            var hour = new Date().getHours()
+
+            if (hour > 12) {
+                hour = hour + " PM"
+            }
+            else hour = hour + " AM"
+
+            document.getElementById("hour").innerHTML = "Current Hour is : " + hour
+
+            if (hour < 10) {
+                greeting = "Good Morning"
+            }
+            else if (hour < 20) {
+                greeting = "Good Day"
+            }
+            else {
+                greeting = "Good Evening"
+            }
+
+            document.getElementById("greet").innerHTML = greeting
+        }
+        
+    </script>
+    
+</body>
+</html>
