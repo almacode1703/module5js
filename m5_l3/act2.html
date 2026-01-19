@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Method</title>
+    <style>
+         html, body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+         }
+
+         .arrStyle{
+            background-color: lightpink;
+            padding: 0.5rem;
+            max-width: fit-content;
+            border: 2px dotted brown;
+            box-shadow: 0px 2px 2px 0px lightgray;
+         }
+         button{
+            border: none;
+            background-color: navy;
+            color:white;
+            padding: 0.5rem 0.65rem;
+         }
+         button:hover{
+            cursor: pointer;
+            background-color: black;
+            transform: scale(1.02);
+            box-shadow: 0px 2px 2px 0px lightgray;
+         }
+    </style>
+</head>
+<body>
+     <h1>Multiply Every Array Element with 10</h1>
+     <p id="original"></p>
+     <button onclick="arrayMultiply()">Multiply</button>
+     <p id="final"></p>
+
+     <script>
+        arr1 = [ 12, 25, 3, 55, 19]
+
+        document.getElementById('original').innerHTML = arr1.join(' ')
+        document.getElementById('original').classList.add('arrStyle')
+
+        function arrayMultiply(){
+            result = arr1.map((item)=>{
+                 return item * 10
+            })
+
+            document.getElementById("final").innerHTML = result.join(' ')
+            document.getElementById("final").classList.add("arrStyle")
+            
+        }
+     </script>
+</body>
+</html>
