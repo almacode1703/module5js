@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Methods</title>
+    <style>
+        html, body{
+            font-family: Helvetica;
+        }
+
+        p{
+            background-color: lightsalmon;
+            padding: 1rem;
+            max-width: fit-content;
+            border: 2px solid brown;
+        }
+
+        h1{
+            background-color: lightgreen;
+            padding: 1rem;
+            max-width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <h1>In this exercis we learn about static method</h1>
+    <h3>We dont need to create objects to call static methods</h3>
+    <h3>We can call them using class name</h3>
+    <p id="demo1"></p> 
+    <p id="demo2"></p> 
+    <p id="demo3"></p> 
+
+    <script>
+        class Greetings{
+            constructor(name){
+                this.name = name
+            }
+
+            static Hello(x){
+                return "Hello " + x.name
+            }
+
+            static welcome(y){
+                return "Welcome "+y.name
+            }
+
+            greet(){
+                return "Hi! "+ this.name
+            }
+        }
+
+        g1 = new Greetings("John")
+
+        document.getElementById("demo1").innerHTML = g1.greet()
+        document.getElementById("demo2").innerHTML = Greetings.Hello(g1)
+        document.getElementById("demo3").innerHTML = Greetings.welcome(g1)
+    </script>
+</body>
+</html>
