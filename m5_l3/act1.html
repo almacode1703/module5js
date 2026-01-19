@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <style>
+        .array_style{
+            background-color: lightgoldenrodyellow;
+            max-width: fit-content;
+            padding: 0.5rem;
+            box-shadow: 0px 2px 3px 0px lightgray;
+            border: 0.5px solid lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Array Methods</h2>
+    <label>Orginal Unsorted Array : </label>
+
+    <p id="demo"></p>
+
+    <button onclick="ascending()">Ascending Order</button>
+    <p id="asc"></p>
+
+    <button onclick="descending()">Descending Order</button>
+    <p id="desc"></p>
+
+    <script>
+        unsorted = [77,4,21,2,5,99,1] 
+          
+        document.getElementById("demo").innerHTML = unsorted.join(' ')
+        document.getElementById("demo").classList.add("array_style")
+        function ascending() {
+          sorted_asc = unsorted.sort((a,b)=>{
+                return a - b
+          })
+          document.getElementById("asc").innerHTML = sorted_asc.join(' ')
+          document.getElementById("asc").classList.add("array_style")
+        }
+
+        function descending() {
+            sorted_desc = unsorted.sort((a, b) => {
+                return b - a
+            })
+
+            document.getElementById("desc").innerHTML = sorted_desc.join(' ')
+            document.getElementById("desc").classList.add("array_style")
+        }
+    </script>
+
+</body>
+
+</html>
