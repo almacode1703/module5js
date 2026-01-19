@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eval Variables</title>
+    <style>
+        .resultStyle{
+            background-color: lightsalmon;
+            padding: 0.5rem;
+            box-shadow: 0px 2px 2px 0px lightgray;
+            border:4px #f5f5f5;
+            border-radius: 3px;
+            max-width: fit-content;
+        }
+        html, body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size:20px;
+        }
+        button{
+          background-color: blue;
+          color: white;
+          padding: 0.55rem 0.65rem;
+          border:none;
+        }
+        button:hover{
+            background-color: #444;
+            transform: scale(1.02);
+            box-shadow: 0px 2px 3px 0px gray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evaluate Variables</h1>
+    <button onclick="func_evaluate()">Evaluate</button>
+    <p id="result"></p>
+    
+      <script>
+          function func_evaluate(){
+            var x = 20
+            var y = 30
+            var z = 40
+             
+            a = eval(x+y)
+            b = eval(y * z )
+            c = eval(z -x)
+            result = a + b + c
+            document.getElementById("result").innerHTML = result
+            document.getElementById("result").classList.add("resultStyle")
+          }
+
+      </script>
+</body>
+</html>
