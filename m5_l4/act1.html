@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion</title>
+    <style>
+        .textStyle{
+            background-color: tomato;
+            color: white;
+            border-radius: 50%;
+            border: 3px solid yellow;
+            padding: 0.5rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 2px 3px 0px lightgray;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+     <h2>This is program to demostrate type conversion in JS</h2>
+     <h3>Orginal value of x = 6 and y = 7</h3>
+
+     Result After Add  <p id="type_number"></p> <br><br>
+     Result After String Concat <p id="type_string"></p>
+
+     <script>
+         var x = 6
+         var y = 7
+         
+         document.getElementById("type_number").innerHTML = x + y
+         document.getElementById("type_number").classList.add("textStyle")
+
+         document.getElementById("type_string").innerHTML = String(x) + String(y)
+         document.getElementById("type_string").classList.add("textStyle")
+
+     </script>
+    
+</body>
+</html>
