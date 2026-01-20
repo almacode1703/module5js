@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+    <style>
+        html,body{
+            font-family: 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h3, strong{
+            font-weight: 100!important;
+        }
+        .resultStyle{
+            background-color: rgba(255, 165, 0,0.89);
+            border: 3px solid white;
+            box-shadow: 0px 2px 2px 0px lightgray;
+            max-width: fit-content;
+            padding: 1rem 2rem;
+        }
+    </style>
+</head>
+<body>
+     <h1>Arrow Function</h1>
+     <h3>Num1 : 4</h3>
+     <h3>Num2 : 5</h3>
+     <button onclick="add_num(4,5)">Click to Add</button> <br><br>
+     <strong>After Addition of Num1 and Num2</strong>
+     <p id="demo"></p>
+     <script>
+        const addNum = (a,b)=> a+b
+        function add_num(x,y){
+            document.getElementById("demo").innerHTML ="Result:  "+addNum(x,y) 
+            document.getElementById("demo").classList.add('resultStyle')
+        }
+     </script>
+</body>
+</html>
