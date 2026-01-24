@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Parse & Stringify</title>
 </head>
+
 <body>
-    
+
+    <h1>JSON Parse and Stringify</h1>
+
+    <button onclick="convert_to_json()">Convert To JSON</button>
+    <p id="toJson"></p>
+
+    <button onclick="convert_to_object()">Convert to Object</button>
+    <pre id="toObject"></pre>
+
+    <script>
+        let js_object = {
+            name: "John",
+            age: 35,
+            location: [
+                {
+                    city: "Bangalore",
+                    pin_code: 123456,
+                    state: "Karnataka"
+                }
+            ]
+        };
+
+        let json_data = JSON.stringify(js_object);
+
+        function convert_to_json() {
+            document.getElementById("toJson").innerHTML = json_data;
+        }
+
+        function convert_to_object() {
+            let converted_json = JSON.parse(json_data);
+
+            document.getElementById("toObject").innerHTML =
+                "Name: " + converted_json.name + "\n" +
+                "Age: " + converted_json.age + "\n" +
+                "City: " + converted_json.location[0].city + "\n" +
+                "Pin Code: " + converted_json.location[0].pin_code + "\n" +
+                "State: " + converted_json.location[0].state;
+        }
+    </script>
+
 </body>
+
 </html>
