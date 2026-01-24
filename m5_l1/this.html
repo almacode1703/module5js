@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript this Keyword</title>
+</head>
+
+<body>
+
+    <h2>Purpose of "this" Keyword</h2>
+
+    <button onclick="person.showName()">Click Me</button>
+
+    <p id="output"></p>
+
+    <script>
+        // ✅ Example Object
+        const person = {
+            name: "Sandy",
+
+            // Method using "this"
+            showName: function () {
+                document.getElementById("output").innerHTML =
+                    "My name is: " + this.name;
+            }
+        };
+
+        /*
+            👉 "this" refers to the object that is calling the function.
+            Here, person.showName() → so "this" means person.
+        */
+
+    </script>
+
+</body>
+
+</html>
