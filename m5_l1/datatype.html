@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>var vs let vs const</title>
+</head>
+
+<body>
+
+    <h2>Difference Between var, let, const</h2>
+
+    <script>
+        // ✅ 1. var (Function Scoped)
+        console.log("----- var Example -----");
+
+        if (true) {
+            var x = 10;  // var is NOT block scoped
+        }
+        console.log("var x =", x); // ✅ Works (x is accessible)
+
+
+        // ✅ 2. let (Block Scoped)
+        console.log("----- let Example -----");
+
+        if (true) {
+            let y = 20;  // let is block scoped
+            console.log("let y inside block =", y); // ✅ Works
+        }
+        // console.log(y); ❌ Error (y not accessible outside block)
+
+
+        // ✅ 3. const (Block Scoped + Cannot Reassign)
+        console.log("----- const Example -----");
+
+        if (true) {
+            const z = 30;  // const is block scoped
+            console.log("const z inside block =", z); // ✅ Works
+        }
+        // console.log(z); ❌ Error (z not accessible outside block)
+
+
+        // ✅ Reassignment Difference
+        console.log("----- Reassignment -----");
+
+        var a = 5;
+        a = 15; // ✅ Allowed
+        console.log("var a =", a);
+
+        let b = 10;
+        b = 25; // ✅ Allowed
+        console.log("let b =", b);
+
+        const c = 50;
+        // c = 100; ❌ Not Allowed
+        console.log("const c =", c);
+
+
+        // ✅ const with objects (value inside can change)
+        console.log("----- const Object Example -----");
+
+        const person = { name: "John" };
+        person.name = "David"; // ✅ Allowed (object property changes)
+
+        console.log("person =", person);
+
+    </script>
+
+</body>
+
+</html>
