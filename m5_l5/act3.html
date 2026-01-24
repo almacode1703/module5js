@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promise</title>
-</head>
+<html>
+
 <body>
-    
+
+    <h2>JavaScript Promise (Better Example)</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(msg) {
+            document.getElementById("demo").innerHTML = msg;
+        }
+
+        function sum(a, b) {
+            let result = a + b;
+            myDisplayer("Sum = " + result);
+        }
+
+        /* ✅ Promise Function */
+        function calculateSum(a, b) {
+            return new Promise((resolve, reject) => {
+                try {
+                    if (typeof a !== "number" || typeof b !== "number") {
+                        throw new Error("Invalid input! Numbers required.");
+                    }
+
+                    resolve(a + b); // success
+
+                } catch (error) {
+                    reject(error.message); // send error message
+                }
+            });
+        }
+
+        /* ✅ Consuming Promise */
+        calculateSum(10, 20)
+            .then(result => {
+                myDisplayer("Result = " + result);
+            })
+            .catch(error => {
+                myDisplayer("Error: " + error);
+            });
+
+    </script>
+
 </body>
+
 </html>
