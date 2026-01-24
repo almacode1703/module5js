@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Async Await</title>
+    <style>
+        html,body{
+            font-family: Helvetica;
+        }
+        .resultStyle{
+            background-color: orangered;
+            color: white;
+            padding: 1rem;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0px 2px 2px 0px lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Example of Async Await</h1>
+    <h3>Adding... 10 & 20</h3>
+    <button onclick="test(10,20)">Async-Await</button>
+    <p id="result"></p>
+
+    <script>
+        async function test(a,b){
+            result = await a+b
+            displayResult(result)
+        }
+
+        function displayResult(result){
+            document.getElementById("result").innerHTML = result
+            document.getElementById("result").classList.add("resultStyle")
+        }
+    </script>
 </body>
 </html>
